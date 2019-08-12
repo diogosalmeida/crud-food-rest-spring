@@ -1,0 +1,21 @@
+server:
+  port: 3007
+  servlet:
+    context-path: /food-crud
+
+
+spring:
+  profiles:
+    active: ${MY_ENV:local}
+
+---
+
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:h2:mem:testedb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
