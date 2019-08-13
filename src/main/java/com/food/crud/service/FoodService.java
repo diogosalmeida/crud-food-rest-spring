@@ -40,4 +40,9 @@ public class FoodService implements IFoodService {
         f = foodRepository.save(f);
         return new FoodResponseDto(f.getId(), f.getName());
     }
+
+    @Override
+    public void delete(long id) {
+         foodRepository.deleteById(id);
+    }
 }

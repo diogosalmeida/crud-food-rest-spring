@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Food")
-@NamedQuery(name = "Food.findAll", query="Select f from Food f")
 public class Food {
     @Id
     @SequenceGenerator(name="Food_ID_GENERATOR", sequenceName = "SQ_FODD", allocationSize = 1)

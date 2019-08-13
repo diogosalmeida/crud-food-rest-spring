@@ -11,4 +11,6 @@ public interface IFoodService {
     FoodResponseDto findById(long id);
 
     FoodResponseDto create(FoodRequestDto requestDto);
+
+    void delete(long id);
 }

@@ -15,8 +15,12 @@ import java.util.List;
 @RequestMapping("/food")
 public class FoodController {
 
-    @Autowired
+    final
     IFoodService foodService;
+
+    public FoodController(IFoodService foodService) {
+        this.foodService = foodService;
+    }
 
     @GetMapping
     public ResponseEntity<List<FoodResponseDto>> getAllFoods() {
@@ -31,5 +35,15 @@ public class FoodController {
     @PostMapping
     public ResponseEntity<FoodResponseDto> createFood(@RequestBody FoodRequestDto req) {
         return ResponseEntity.status(HttpStatus.CREATED).body(foodService.create(req));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteFood(@PathVariable long id) {
+        try {
+            foodService.delete(id);
+            return ResponseEntity.ok("Food delete");
+        } catch (Exception e) {
+            return ResponseEntity.ok(e.getMessage());
+        }
     }
 }
