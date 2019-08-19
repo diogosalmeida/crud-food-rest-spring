@@ -6,8 +6,6 @@ import javax.persistence.*;
 @Table(name="Food")
 public class Food {
     @Id
-    @SequenceGenerator(name="Food_ID_GENERATOR", sequenceName = "SQ_FODD", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FOOD_ID_GENERATOR")
     @Column(name = "id", unique = true, nullable = false, precision = 5)
     private long id;
 
