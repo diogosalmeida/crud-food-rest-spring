@@ -8,4 +8,4 @@ CREATE TABLE food (
 INSERT INTO food (name) VALUES
   ('Goiabada'),
   ('Feijoada'),
-  ('Cu de peixe');
+  ('Feijão');
